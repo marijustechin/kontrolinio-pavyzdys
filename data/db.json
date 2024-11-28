@@ -1,0 +1,52 @@
+{
+  "donors": [
+    {
+      "id": "48a5",
+      "firstName": "Jurga",
+      "lastName": "Ivanauskaitė",
+      "age": "33",
+      "gender": "moteris",
+      "bloodGroup": "B (III)"
+    },
+    {
+      "id": "223c",
+      "firstName": "Jonas",
+      "lastName": "Avyžius",
+      "age": "45",
+      "gender": "vyras",
+      "bloodGroup": "AB (IV)"
+    },
+    {
+      "id": "9359",
+      "firstName": "Jazzu",
+      "lastName": "Bazzu",
+      "age": "25",
+      "gender": "moteris",
+      "bloodGroup": "A (II)"
+    },
+    {
+      "id": "2d1d",
+      "firstName": "Markas",
+      "lastName": "Tvenas",
+      "age": "32",
+      "gender": "vyras",
+      "bloodGroup": "A (II)"
+    },
+    {
+      "id": "5acf",
+      "firstName": "Jonas",
+      "lastName": "Gražulis",
+      "age": "41",
+      "gender": "vyras",
+      "bloodGroup": "O (I)"
+    },
+    {
+      "id": "573f",
+      "firstName": "Algis",
+      "lastName": "Briedis",
+      "age": "33",
+      "gender": "vyras",
+      "bloodGroup": "B (III)"
+    }
+  ]
+}
