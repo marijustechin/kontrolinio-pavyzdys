@@ -47,6 +47,22 @@
       "age": "33",
       "gender": "vyras",
       "bloodGroup": "B (III)"
+    },
+    {
+      "id": "24e8",
+      "firstName": "Austė",
+      "lastName": "Idaitė",
+      "age": "18",
+      "gender": "moteris",
+      "bloodGroup": "A (II)"
+    },
+    {
+      "id": "a7d5",
+      "firstName": "Tomas",
+      "lastName": "Čeponis",
+      "age": "22",
+      "gender": "vyras",
+      "bloodGroup": "A (II)"
     }
   ]
 }

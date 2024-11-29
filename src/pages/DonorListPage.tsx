@@ -1,8 +1,8 @@
-import { useLoaderData } from 'react-router-dom';
-import image from '/donorai-herojai.png';
-import { DonorCard } from '../components/DonorCard';
-import { DonorContext } from '../service/DonorContext';
-import { useState } from 'react';
+import { useLoaderData } from "react-router-dom";
+import image from "/donorai-herojai.png";
+import { DonorCard } from "../components/DonorCard";
+import { DonorContext } from "../service/DonorContext";
+import { useState } from "react";
 
 export interface IDonor {
   firstName: string;
@@ -15,6 +15,7 @@ export interface IDonor {
 
 const DonorListPage = () => {
   const donors = useLoaderData() as IDonor[];
+
   const [donorState, setDonorState] = useState({
     donors: donors,
     removeDonor: (id: string) =>
@@ -22,13 +23,7 @@ const DonorListPage = () => {
         ...donorState,
         donors: [...donors.filter((donor) => donor.id !== id)],
       }),
-    updateDonor: (id: string, donor: IDonor) => {
-      setDonorState({
-        ...donorState,
-        donors: [...donors.filter((donor) => donor.id !== id)],
-      }),
-        setDonorState({ ...donorState, donors: [...donors, donor] });
-    },
+    updateDonor: (id: string, donor: IDonor) => {},
   });
 
   return (
@@ -50,7 +45,7 @@ const DonorListPage = () => {
         </div>
 
         <div className="col-span-2">
-          <img src={image} alt="imgae" />
+          <img className="rounded-lg" src={image} alt="imgae" />
         </div>
       </div>
     </main>

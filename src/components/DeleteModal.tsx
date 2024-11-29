@@ -1,6 +1,6 @@
-import { IoMdClose } from 'react-icons/io';
-import { useDonorContext } from '../service/DonorContext';
-import axios from 'axios';
+import { IoMdClose } from "react-icons/io";
+import { useDonorContext } from "../service/DonorContext";
+import axios from "axios";
 
 interface IModalProps {
   open: boolean;
@@ -22,7 +22,7 @@ export const DeleteModal = ({ open, id, onClose }: IModalProps) => {
     /** overlejus */
     <div
       className={`fixed inset-0 flex justify-center items-center transition-colors ${
-        open ? 'visible bg-slate-800/50' : 'invisible'
+        open ? "visible bg-slate-800/50" : "invisible"
       }`}
       onClick={onClose}
     >
@@ -30,9 +30,9 @@ export const DeleteModal = ({ open, id, onClose }: IModalProps) => {
       <div
         // reikia sustabdyti is tevo
         // paveldeta onclik funkcija
-        onClick={(e) => e.stopPropagation()}
+        // onClick={(e) => e.stopPropagation()}
         className={`bg-slate-100 rounded-xl shadow p-6 transition-all text-lg w-[400px] ${
-          open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'
+          open ? "scale-100 opacity-100" : "scale-125 opacity-0"
         }`}
       >
         <button
