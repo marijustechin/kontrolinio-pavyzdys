@@ -1,28 +1,37 @@
-import { IoMdClose } from "react-icons/io";
-import { useDonorContext } from "../service/DonorContext";
-import axios from "axios";
+import { IoMdClose } from 'react-icons/io';
+import { IDonor } from '../pages/DonorListPage';
+import { deleteById } from '../api/crud';
+import { useState } from 'react';
 
 interface IModalProps {
   open: boolean;
-  id: string;
+  donor: IDonor;
   onClose: () => void;
+  onDelete: () => void;
 }
 
-export const DeleteModal = ({ open, id, onClose }: IModalProps) => {
-  const donorState = useDonorContext();
-
+export const DeleteModal = ({
+  open,
+  donor,
+  onClose,
+  onDelete,
+}: IModalProps) => {
+  const [deleteError, setDeleteError] = useState('');
   const handleDelete = async () => {
-    const res = await axios.delete(`http://localhost:8888/donors/${id}`);
-    console.log(res.status);
-    donorState.removeDonor(id);
-    onClose();
+    const res = await deleteById(donor.id);
+    if (typeof res === 'string') {
+      setDeleteError(res);
+    } else {
+      onDelete();
+      onClose();
+    }
   };
 
   return (
     /** overlejus */
     <div
       className={`fixed inset-0 flex justify-center items-center transition-colors ${
-        open ? "visible bg-slate-800/50" : "invisible"
+        open ? 'visible bg-slate-800/50' : 'invisible'
       }`}
       onClick={onClose}
     >
@@ -30,9 +39,9 @@ export const DeleteModal = ({ open, id, onClose }: IModalProps) => {
       <div
         // reikia sustabdyti is tevo
         // paveldeta onclik funkcija
-        // onClick={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         className={`bg-slate-100 rounded-xl shadow p-6 transition-all text-lg w-[400px] ${
-          open ? "scale-100 opacity-100" : "scale-125 opacity-0"
+          open ? 'scale-100 opacity-100' : 'scale-125 opacity-0'
         }`}
       >
         <button
@@ -42,7 +51,19 @@ export const DeleteModal = ({ open, id, onClose }: IModalProps) => {
           <IoMdClose />
         </button>
 
-        <div>Ar tikrai norite ištrinti kažką donorą, kurio ID yra {id}?</div>
+        <div>
+          {deleteError ? (
+            <p>{deleteError}</p>
+          ) : (
+            <>
+              {' '}
+              <p>Ar tikrai norite ištrinti donorą</p>
+              <p className="text-center font-semibold text-lg">
+                {donor.firstName + ' ' + donor.lastName} ?
+              </p>
+            </>
+          )}
+        </div>
         <div className="flex gap-3 items-center justify-center mt-3">
           <button onClick={handleDelete} className="btn-red">
             Taip

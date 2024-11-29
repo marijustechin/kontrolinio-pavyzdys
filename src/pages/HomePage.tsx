@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import image from '/kraujo-donoras.jpg';
 
 const HomePage = () => {
@@ -14,7 +15,13 @@ const HomePage = () => {
             kraujo į Žolyno gatvę, esančią Vilniuje. Už tai gaudavome talonus
             nemokamiems pietums, kurie studentus kaskart nudžiugindavo.
           </p>
-
+          <p className="text-center">
+            <Link to={'/registracija'}>
+              <button className="py-2 px-3 bg-sky-600 rounded-lg text-sky-50 hover:bg-sky-700 duration-300">
+                Užsiregistruok ir duok kraujo!
+              </button>
+            </Link>
+          </p>
           <p>
             Mano kraujo donorystės kelias tęsėsi: prieš Lietuvai atgaunant
             nepriklausomybę buvo tokia prievolė, kad būsimasis tėtis, prieš
@@ -29,6 +36,11 @@ const HomePage = () => {
             kraują. Nuo to laiko kraujo duodu daugmaž reguliariai, tai tapo
             gražiu įpročiu. Šis kartas – jau 85-asis, kai džiaugiuosi galėdamas
             prisidėti prie kilniausios misijos – išgelbėti gyvybę.“
+          </p>
+          <p className="text-right text-sm">
+            <Link to={'https://kraujodonoryste.lt/'} target="_blank">
+              Informacija paimta iš Nacionalinio kraujo centro
+            </Link>
           </p>
         </div>
         <div>

@@ -2,15 +2,13 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-} from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import HomePage from "../pages/HomePage";
-import RegistrationPage from "../pages/RegistrationPage";
-import DonorListPage from "../pages/DonorListPage";
-import { DonorHydrateCallback, DonorLoader } from "./DonorLouder";
-import DonorDetailsPage, {
-  DonorDetailsLoader,
-} from "../pages/DonorDetailsPage";
+} from 'react-router-dom';
+import MainLayout from '../layouts/MainLayout';
+import HomePage from '../pages/HomePage';
+import RegistrationPage from '../pages/RegistrationPage';
+import DonorListPage from '../pages/DonorListPage';
+import { DonorHydrateCallback, DonorLoader } from './DonorLouder';
+import DonorDetailsPage from '../pages/DonorDetailsPage';
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,7 +27,7 @@ export const Router = createBrowserRouter(
 );
 
 export const routerLinks = [
-  { title: "Pradžia", href: "/" },
-  { title: "Registracija", href: "/registracija" },
-  { title: "Donorai", href: "/donoru-sarasas" },
+  { title: 'Pradžia', href: '/' },
+  { title: 'Registracija', href: '/registracija' },
+  { title: 'Donorai', href: '/donoru-sarasas' },
 ];

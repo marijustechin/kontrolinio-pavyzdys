@@ -1,7 +1,7 @@
-import axios from "axios";
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { DONORS_URL } from "../helpers/constants";
+import axios from 'axios';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { DONORS_URL } from '../helpers/constants';
 
 interface IFormValues {
   firstName: string;
@@ -12,7 +12,7 @@ interface IFormValues {
 }
 
 export const RegistrationForm = () => {
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState('');
 
   const {
     register,
@@ -25,13 +25,13 @@ export const RegistrationForm = () => {
     const res = await axios.post(DONORS_URL, JSON.stringify(data));
 
     if (res.status !== 201)
-      throw new Error("Arba json-server miega, arba kažkur yra klaida");
+      throw new Error('Arba json-server miega, arba kažkur yra klaida');
 
-    setSuccess("Sveikiname sėkmingai tapus kraujo donoru!");
+    setSuccess('Sveikiname sėkmingai tapus kraujo donoru!');
 
     setTimeout(() => {
       reset();
-      setSuccess("");
+      setSuccess('');
     }, 3000);
   };
 
@@ -44,7 +44,7 @@ export const RegistrationForm = () => {
             {success ? (
               <em className="text-lg">{success}</em>
             ) : (
-              "Maloniai kviečiame tapti kraujo donoru"
+              'Maloniai kviečiame tapti kraujo donoru'
             )}
           </span>
         </div>
@@ -61,8 +61,8 @@ export const RegistrationForm = () => {
                 type="text"
                 id="firstName"
                 autoComplete="on"
-                {...register("firstName", {
-                  required: "Pamiršote įvesti vardą",
+                {...register('firstName', {
+                  required: 'Pamiršote įvesti vardą',
                 })}
               />
             </div>
@@ -83,8 +83,8 @@ export const RegistrationForm = () => {
                 type="text"
                 id="lastName"
                 autoComplete="on"
-                {...register("lastName", {
-                  required: "Pamiršote įvesti pavardę",
+                {...register('lastName', {
+                  required: 'Pamiršote įvesti pavardę',
                 })}
               />
             </div>
@@ -105,8 +105,8 @@ export const RegistrationForm = () => {
                 type="number"
                 id="age"
                 autoComplete="on"
-                {...register("age", {
-                  required: "Prašome nurodyti savo amžių",
+                {...register('age', {
+                  required: 'Prašome nurodyti savo amžių',
                 })}
               />
             </div>
@@ -127,9 +127,9 @@ export const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="gender"
-                    value={"moteris"}
-                    {...register("gender", {
-                      required: "Prašome pasirinkti lytį",
+                    value={'moteris'}
+                    {...register('gender', {
+                      required: 'Prašome pasirinkti lytį',
                     })}
                   />
                 </p>
@@ -138,9 +138,9 @@ export const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="genderv"
-                    value={"vyras"}
-                    {...register("gender", {
-                      required: "Prašome pasirinkti lytį",
+                    value={'vyras'}
+                    {...register('gender', {
+                      required: 'Prašome pasirinkti lytį',
                     })}
                   />
                 </p>
@@ -161,15 +161,15 @@ export const RegistrationForm = () => {
                 <select
                   className="p-2 rounded-md bg-white border border-sky-400 focus:outline-none"
                   id="bloodGroup"
-                  {...register("bloodGroup", {
-                    required: "Prašome pasirinkti kraujo grupę",
+                  {...register('bloodGroup', {
+                    required: 'Prašome pasirinkti kraujo grupę',
                   })}
                 >
-                  <option value={""}>--pasirinkite--</option>
-                  <option value={"O (I)"}>O (I)</option>
-                  <option value={"A (II)"}>A (II)</option>
-                  <option value={"B (III)"}>B (III)</option>
-                  <option value={"AB (IV)"}>AB (IV)</option>
+                  <option value={''}>--pasirinkite--</option>
+                  <option value={'O (I)'}>O (I)</option>
+                  <option value={'A (II)'}>A (II)</option>
+                  <option value={'B (III)'}>B (III)</option>
+                  <option value={'AB (IV)'}>AB (IV)</option>
                 </select>
               </div>
             </div>
