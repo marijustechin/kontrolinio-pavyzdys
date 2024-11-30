@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
-import image from "/donorai-herojai.png";
-import { DonorCard } from "../components/DonorCard";
-import { DonorContext } from "../service/DonorContext";
-import { useState } from "react";
+import { useLoaderData } from 'react-router-dom';
+import image from '/donorai-herojai.png';
+import { DonorCard } from '../components/DonorCard';
+import { DonorContext } from '../service/DonorContext';
+import { useState } from 'react';
 
 export interface IDonor {
   firstName: string;
@@ -35,11 +35,13 @@ const DonorListPage = () => {
         <div className="col-span-4">
           <DonorContext.Provider value={donorState}>
             <div className="grid grid-cols-3 gap-3">
-              {donorState.donors.map((donor) => (
-                <div key={donor.id}>
-                  <DonorCard donor={donor} />
-                </div>
-              ))}
+              {donorState.donors
+                .sort((a, b) => a.lastName.localeCompare(b.lastName))
+                .map((donor) => (
+                  <div key={donor.id}>
+                    <DonorCard donor={donor} />
+                  </div>
+                ))}
             </div>
           </DonorContext.Provider>
         </div>
